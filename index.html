@@ -271,6 +271,7 @@ a{text-decoration:none;color:inherit}
 .cards-grid{display:grid;gap:18px}
 .cards-3{grid-template-columns:repeat(3,1fr)}
 .cards-2{grid-template-columns:repeat(2,1fr)}
+.company-intel-grid{grid-template-columns:repeat(6,1fr)}
 .cards-4{grid-template-columns:repeat(4,1fr)}
 .card{
   background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);
@@ -608,38 +609,151 @@ textarea.form-control{resize:vertical;min-height:96px}
   .mob-nav{display:none}
   .mob-bottom-nav{display:flex}
   .main{padding-top:58px;padding-bottom:72px}
-  .hero{padding:48px 28px 44px}
-  .section{padding:44px 28px}
-  .mission-block{padding:32px 24px}
-  .footer-top{padding:36px 28px 28px;grid-template-columns:1fr 1fr}
-  .footer-bottom{padding:14px 28px}
-  .footer-divider{margin:0 28px}
-}
-@media(max-width:768px){
+  .hero{padding:28px 18px 28px}
+  .section{padding:28px 18px}
+  .mission-block{padding:24px 18px}
+  .footer-top{padding:28px 18px 22px;grid-template-columns:1fr 1fr}
+  .footer-bottom{padding:12px 18px}
+  .footer-divider{margin:0 18px}
+
+  /* Hero */
   .hero-grid{grid-template-columns:1fr}
+  .hero-dashboard{display:none}
+  .hero h1{font-size:clamp(1.55rem,5vw,2.2rem)}
+  .hero-sub{font-size:.88rem}
+  .hero-trust-row{gap:5px}
+  .trust-chip{font-size:.6rem;padding:3px 9px}
+
+  /* Section headers */
+  .section-header h2{font-size:clamp(1.2rem,4.5vw,1.7rem)}
+  .section-header p{font-size:.85rem}
+
+  /* Cards */
   .cards-3{grid-template-columns:1fr}
   .cards-4{grid-template-columns:1fr 1fr}
+  .cards-2{grid-template-columns:1fr}
+  .card{padding:18px}
+
+  /* Phase grid */
   .phase-grid{grid-template-columns:1fr}
+
+  /* Mission */
   .mission-grid{grid-template-columns:1fr}
+  .mission-block{padding:22px 16px}
+  .mission-features{grid-template-columns:1fr 1fr}
+
+  /* Contact & Pricing & Market */
   .contact-grid{grid-template-columns:1fr}
   .pricing-grid{grid-template-columns:1fr}
   .market-stats-row{grid-template-columns:1fr 1fr}
   .charts-2{grid-template-columns:1fr}
-  .footer-top{grid-template-columns:1fr}
-  .cards-2{grid-template-columns:1fr}
+
+  /* FAQ two-col collapse */
+  #page-faq .section > div[style*="grid-template-columns:1fr 1fr"]{
+    display:flex!important;flex-direction:column!important;gap:16px!important;
+  }
+
+  /* Dashboard */
+  .dash-page-grid{grid-template-columns:1fr 1fr!important}
+  .dash-two-col{grid-template-columns:1fr!important}
+  .dash-two-col .dash-panel:first-child{overflow-x:auto}
+  .dash-table{min-width:480px}
+  #page-dashboard .section > div[style*="grid-template-columns:1.2fr"]{
+    display:flex!important;flex-direction:column!important;gap:14px!important;
+  }
+
+  /* Topbar hidden on mobile */
   .topbar{display:none}
+
+  /* Footer */
+  .footer-top{grid-template-columns:1fr!important}
+  .footer-brand-logo{margin-bottom:6px}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:8px}
+
+  /* Profile */
+  .profile-hero{padding:24px 18px 20px}
+  .profile-hero-inner{grid-template-columns:auto 1fr;gap:14px}
+  .profile-hero-right{display:none}
+  .profile-body{padding:20px 18px}
+  .profile-grid{grid-template-columns:1fr;gap:20px}
+  .profile-avatar-big{width:64px;height:64px;border-radius:16px;font-size:1.2rem}
+  .profile-hero-name{font-size:clamp(1.1rem,4vw,1.5rem)}
+  .profile-hero-sub{font-size:.8rem}
+  .profile-hero-chips{gap:5px}
+
+  /* Market stat cards */
+  .stat-card{padding:18px}
+  .stat-val{font-size:clamp(1.5rem,5vw,2.2rem)}
+
+  /* Pricing cards */
+  .pricing-card{padding:22px}
+  .pricing-card:hover{transform:none}
+
+  /* Process timeline */
+  .process-timeline{padding-left:28px}
+
+  /* Demo block */
+  .demo-block{padding:24px 18px}
+  .demo-btns{flex-direction:column;align-items:stretch}
+  .demo-btns .btn-primary,.demo-btns .btn-outline{width:100%}
+
+  /* AI Chat */
+  .ai-chat-btn{bottom:82px;right:14px;width:46px;height:46px}
+  .ai-chat-panel{right:10px;bottom:140px;width:calc(100vw - 20px);max-width:340px}
+
+  /* Compliance row 4-col → 2-col on mobile */
+  .compliance-row-grid{grid-template-columns:1fr 1fr!important}
+
+  /* Company Intelligence banner 6-col → 3-col on mobile */
+  .company-intel-banner{padding:18px 14px!important}
+  .company-intel-grid{grid-template-columns:repeat(3,1fr);gap:12px}
+
+  /* Competitive Edge table — horizontal scroll on mobile */
+  .compare-table-wrap{overflow-x:auto!important;-webkit-overflow-scrolling:touch}
+  .compare-table{min-width:480px;font-size:.75rem}
+  .compare-table th,.compare-table td{padding:9px 10px}
+
+  /* Toast */
+  #toastStack{bottom:82px;width:90%;max-width:340px}
+  .toast{white-space:normal;text-align:center}
+
+  /* Comparison table horizontal scroll */
+  #page-engines .section > div[style*="border-radius"]{overflow-x:auto}
 }
+
+@media(max-width:600px){
+  .cards-4{grid-template-columns:1fr}
+  .market-stats-row{grid-template-columns:1fr 1fr}
+  .dash-page-grid{grid-template-columns:1fr 1fr!important}
+  .mission-features{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .cert-grid{grid-template-columns:1fr}
+  .phase-card{flex-direction:column;gap:10px}
+}
+
 @media(max-width:480px){
-  .hero{padding:36px 18px 32px}
-  .section{padding:36px 18px}
+  .hero{padding:22px 14px 22px}
+  .section{padding:22px 14px}
+  .hero h1{font-size:1.55rem}
+  .section-header h2{font-size:1.2rem}
   .cards-4{grid-template-columns:1fr}
   .market-stats-row{grid-template-columns:1fr}
   .form-row{grid-template-columns:1fr}
   .mission-features{grid-template-columns:1fr}
+  .dash-page-grid{grid-template-columns:1fr!important}
+  .profile-avatar-big{width:54px;height:54px;font-size:1rem}
+  .trust-chip{font-size:.55rem;padding:2px 7px}
+  .btn-primary,.btn-outline{font-size:.84rem;padding:12px 16px}
+  .faq-q{font-size:.84rem}
+  .pricing-price{font-size:1.9rem}
+  /* Compliance 2-col → 1-col on tiny screens */
+  .compliance-row-grid{grid-template-columns:1fr 1fr!important}
+  /* Company intel → 2-col on tiny screens */
+  .company-intel-grid{grid-template-columns:repeat(2,1fr);gap:10px}
 }
 
 /* ══════════════════════════════════════
-   MOBILE GLOBAL BUTTON FIXES ≤900px
+   MOBILE GLOBAL TOUCH & FORM FIXES ≤900px
 ══════════════════════════════════════ */
 @media(max-width:900px){
   button,input,select,textarea{-webkit-tap-highlight-color:rgba(59,130,246,0.15)}
@@ -653,18 +767,11 @@ textarea.form-control{resize:vertical;min-height:96px}
   textarea.form-control{min-height:90px}
   .faq-q{min-height:52px;padding:14px 16px;font-size:.88rem}
   .card:hover{transform:none}
-  .dash-two-col .dash-panel:first-child{overflow-x:auto}
-  .dash-table{min-width:520px}
-}
-@media(max-width:480px){
-  .btn-primary,.btn-outline{font-size:.84rem;padding:12px 18px}
-  .faq-q{font-size:.84rem}
-  .hero h1{font-size:1.75rem}
-  .section-header h2{font-size:1.35rem}
+  .why-fig-card .btn-primary,.why-fig-card .btn-outline{font-size:.8rem;padding:10px 16px;min-height:44px}
 }
 
 /* ══════════════════════════════════════
-   HAMBURGER BUTTON — 3-line icon
+   HAMBURGER BUTTON 3-line icon
 ══════════════════════════════════════ */
 .mob-hbg{
   display:none;width:40px;height:40px;
@@ -685,7 +792,7 @@ textarea.form-control{resize:vertical;min-height:96px}
 .mob-hbg:active{transform:scale(.92)}
 
 /* ══════════════════════════════════════
-   FULL LEFT DRAWER — all nav sections
+   FULL LEFT DRAWER all nav sections
 ══════════════════════════════════════ */
 .mob-drawer-overlay{
   position:fixed;inset:0;z-index:610;
@@ -737,7 +844,7 @@ textarea.form-control{resize:vertical;min-height:96px}
 .mob-drawer-note{font-family:var(--font-mono);font-size:.55rem;color:var(--text-muted);text-align:center;margin-top:8px}
 
 /* ══════════════════════════════════════
-   MOBILE TOP HEADER BAR — premium redesign
+   MOBILE TOP HEADER BAR premium redesign
 ══════════════════════════════════════ */
 .mob-top-bar{
   display:none;position:fixed;top:0;left:0;right:0;z-index:580;
@@ -779,7 +886,7 @@ textarea.form-control{resize:vertical;min-height:96px}
 .mob-top-demo:active{transform:scale(.95)}
 
 /* ══════════════════════════════════════
-   MOBILE BOTTOM TAB NAV — glowing indicator
+   MOBILE BOTTOM TAB NAV glowing indicator
 ══════════════════════════════════════ */
 .mob-bottom-nav{
   display:none;position:fixed;bottom:0;left:0;right:0;z-index:600;
@@ -860,7 +967,7 @@ textarea.form-control{resize:vertical;min-height:96px}
 }
 
 /* ══════════════════════════════════════
-   MORE BOTTOM SHEET — premium list design
+   MORE BOTTOM SHEET premium list design
 ══════════════════════════════════════ */
 .mob-sheet-overlay{
   position:fixed;inset:0;z-index:594;
@@ -1192,7 +1299,7 @@ textarea.form-control{resize:vertical;min-height:96px}
 <div class="mob-drawer-overlay" id="mobDrawerOverlay" onclick="closeMobDrawer()"></div>
 
 <!-- ═══════════════════════════════════
-  MOBILE FULL LEFT DRAWER — all sections
+  MOBILE FULL LEFT DRAWER all sections
 ═══════════════════════════════════ -->
 <div class="mob-drawer" id="mobDrawer">
   <!-- Header -->
@@ -1276,7 +1383,7 @@ textarea.form-control{resize:vertical;min-height:96px}
 </div>
 
 <!-- ═══════════════════════════════════
-  MOBILE TOP BAR — brand + current page + demo
+  MOBILE TOP BAR brand + current page + demo
 ═══════════════════════════════════ -->
 <div class="mob-top-bar">
   <div class="mob-top-left">
@@ -1296,7 +1403,7 @@ textarea.form-control{resize:vertical;min-height:96px}
 </div>
 
 <!-- ═══════════════════════════════════
-  MOBILE BOTTOM TAB BAR — glowing active indicator
+  MOBILE BOTTOM TAB BAR glowing active indicator
 ═══════════════════════════════════ -->
 <nav class="mob-bottom-nav" id="mobBottomNav">
   <button class="mob-tab active" id="mobtab-home" onclick="showPage('home');setMobTab('home')">
@@ -1337,7 +1444,7 @@ textarea.form-control{resize:vertical;min-height:96px}
 <div class="mob-sheet-overlay" id="mobSheetOverlay" onclick="closeMobSheet()"></div>
 
 <!-- ═══════════════════════════════════
-  MORE BOTTOM SHEET — premium list rows
+  MORE BOTTOM SHEET premium list rows
 ═══════════════════════════════════ -->
 <div class="mob-more-sheet" id="mobMoreSheet">
   <div class="mob-sheet-drag-area">
@@ -1524,7 +1631,7 @@ textarea.form-control{resize:vertical;min-height:96px}
           </div>
           <h1>Eliminate Fatigue Risk.<br><em>Protect Your Workforce.</em></h1>
           <p class="hero-sub">
-            Fatigue Intelligence Group delivers <strong>AI-driven fatigue risk assessment</strong>, predictive workforce monitoring, and real-time safety intelligence — helping UK organisations prevent fatigue-related incidents <strong>before they occur.</strong>
+            Fatigue Intelligence Group delivers <strong>AI-driven fatigue risk assessment</strong>, predictive workforce monitoring, and real-time safety intelligence helping UK organisations prevent fatigue-related incidents <strong>before they occur.</strong>
           </p>
           <div class="hero-btns">
             <button class="btn-primary btn-pulse" onclick="showPage('contact')">Book Platform Demo</button>
@@ -1604,7 +1711,7 @@ textarea.form-control{resize:vertical;min-height:96px}
       <div class="section-header">
         <div class="section-eyebrow">The Fatigue Crisis</div>
         <h2>Fatigue Costs UK Businesses<br>Billions Every Year.</h2>
-        <p>Workforce fatigue is the hidden epidemic draining productivity, causing accidents, and costing lives. Most organisations detect fatigue too late — after the incident has already occurred. FIG changes that.</p>
+        <p>Workforce fatigue is the hidden epidemic draining productivity, causing accidents, and costing lives. Most organisations detect fatigue too late after the incident has already occurred. FIG changes that.</p>
       </div>
       <div class="cards-grid cards-4">
         <div class="stat-card">
@@ -1634,7 +1741,7 @@ textarea.form-control{resize:vertical;min-height:96px}
     <div class="section">
       <div class="demo-block">
         <h2>Transform Reactive Safety Into Predictive Intelligence</h2>
-        <p>Experience how Fatigue Intelligence Group converts shift data, biometric inputs, and historical incident records into real-time safety intelligence — protecting your workforce, shift by shift.</p>
+        <p>Experience how Fatigue Intelligence Group converts shift data, biometric inputs, and historical incident records into real-time safety intelligence protecting your workforce, shift by shift.</p>
         <div class="demo-btns">
           <button class="btn-primary" onclick="showPage('contact')">Book Live Platform Demo</button>
           <button class="btn-outline" onclick="showPage('process')">See How It Works</button>
@@ -1642,7 +1749,7 @@ textarea.form-control{resize:vertical;min-height:96px}
       </div>
 
       <!-- COMPLIANCE ROW -->
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
+      <div class="compliance-row-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
         <div class="card" style="text-align:center;padding:20px">
           <div style="font-family:var(--font-head);font-size:1.4rem;font-weight:800;color:var(--blue-bright);margin-bottom:5px">HSE</div>
           <div style="font-size:.74rem;color:var(--text-muted)">UK Health &amp; Safety Executive Standards</div>
@@ -1672,7 +1779,7 @@ textarea.form-control{resize:vertical;min-height:96px}
       <div class="section-header">
         <div class="section-eyebrow">Core Engines</div>
         <h2>Three Engines. One Intelligent Safety Platform.</h2>
-        <p>Fatigue Intelligence Group combines real-time biometric data, AI predictive modelling, and regulatory compliance intelligence into a unified platform that keeps your workforce safe — shift by shift, role by role.</p>
+        <p>Fatigue Intelligence Group combines real-time biometric data, AI predictive modelling, and regulatory compliance intelligence into a unified platform that keeps your workforce safe shift by shift, role by role.</p>
       </div>
       <div class="cards-grid cards-3" style="margin-bottom:36px">
         <div class="card">
@@ -1694,7 +1801,7 @@ textarea.form-control{resize:vertical;min-height:96px}
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           </div>
           <h3>Incident Forensics & Root Cause</h3>
-          <p>Analyses workforce incidents, near-misses, and safety events to trace root causes to fatigue factors — enabling corrective scheduling before the next shift begins. Generates forensic-level reporting aligned with HSE, RIDDOR, and ISO 45003.</p>
+          <p>Analyses workforce incidents, near-misses, and safety events to trace root causes to fatigue factors enabling corrective scheduling before the next shift begins. Generates forensic-level reporting aligned with HSE, RIDDOR, and ISO 45003.</p>
           <div class="card-tags">
             <span class="pill pill-cyan">RIDDOR Ready</span>
             <span class="pill pill-cyan">HSE Forensics</span>
@@ -1707,7 +1814,7 @@ textarea.form-control{resize:vertical;min-height:96px}
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
           </div>
           <h3>Compliance Automation Engine</h3>
-          <p>Automatically checks every shift against Working Time Regulations, sector-specific rest requirements, and internal fatigue policies — flagging breaches in real time. Reduces manual compliance overhead for H&S teams by 60%.</p>
+          <p>Automatically checks every shift against Working Time Regulations, sector-specific rest requirements, and internal fatigue policies flagging breaches in real time. Reduces manual compliance overhead for H&S teams by 60%.</p>
           <div class="card-tags">
             <span class="pill pill-green">WTR Automated</span>
             <span class="pill pill-green">60% Less Overhead</span>
@@ -1721,7 +1828,7 @@ textarea.form-control{resize:vertical;min-height:96px}
         <div class="section-eyebrow-cyan">Competitive Edge</div>
         <h2>FIG vs. Basic Compliance Tools</h2>
       </div>
-      <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden">
+      <div class="compare-table-wrap" style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden">
         <table class="compare-table">
           <thead>
             <tr>
@@ -1752,7 +1859,7 @@ textarea.form-control{resize:vertical;min-height:96px}
       <div class="section-header">
         <div class="section-eyebrow">Platform Modules</div>
         <h2>Every Layer of Fatigue Intelligence</h2>
-        <p>A cloud-native SaaS platform built on a modular architecture — real-time dashboards, biometric API integration, proprietary fatigue risk data model, and UK GDPR-compliant infrastructure designed for high-risk UK sectors.</p>
+        <p>A cloud-native SaaS platform built on a modular architecture real-time dashboards, biometric API integration, proprietary fatigue risk data model, and UK GDPR-compliant infrastructure designed for high-risk UK sectors.</p>
       </div>
       <div class="cards-grid cards-3">
         <div class="card">
@@ -1773,7 +1880,7 @@ textarea.form-control{resize:vertical;min-height:96px}
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
           </div>
           <h3>Predictive Shift Intelligence</h3>
-          <p>Automatically diagnoses high-risk shift patterns — excessive consecutive nights, insufficient rest windows, and dangerous shift rotation sequences — before rotas are published. Trained on UK sector-specific incident data.</p>
+          <p>Automatically diagnoses high-risk shift patterns excessive consecutive nights, insufficient rest windows, and dangerous shift rotation sequences before rotas are published. Trained on UK sector-specific incident data.</p>
           <div class="status-pills">
             <span class="pill pill-cyan">Pre-Rota Analysis</span>
             <span class="pill pill-cyan">UK Sector Data</span>
@@ -1785,7 +1892,7 @@ textarea.form-control{resize:vertical;min-height:96px}
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
           </div>
           <h3>Biometric Integration Layer</h3>
-          <p>Integrates with Garmin Health, Fitbit Enterprise, Whoop, and access control systems to enrich the fatigue risk model with objective physiological data — heart rate variability, reaction time, and alertness indicators.</p>
+          <p>Integrates with Garmin Health, Fitbit Enterprise, Whoop, and access control systems to enrich the fatigue risk model with objective physiological data heart rate variability, reaction time, and alertness indicators.</p>
           <div class="status-pills">
             <span class="pill pill-warn">Garmin · Fitbit · Whoop</span>
           </div>
@@ -1796,7 +1903,7 @@ textarea.form-control{resize:vertical;min-height:96px}
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
           </div>
           <h3>Compliance Automation Engine</h3>
-          <p>Automatically checks every shift and rota against Working Time Regulations, sector-specific rest requirements, and internal fatigue policies — flagging breaches before they become liabilities. Reduces compliance risk to near zero.</p>
+          <p>Automatically checks every shift and rota against Working Time Regulations, sector-specific rest requirements, and internal fatigue policies flagging breaches before they become liabilities. Reduces compliance risk to near zero.</p>
           <div class="status-pills">
             <span class="pill pill-green">WTR Live Check</span>
             <span class="pill pill-green">Auto-Escalation</span>
@@ -1820,7 +1927,7 @@ textarea.form-control{resize:vertical;min-height:96px}
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
           </div>
           <h3>Incident Forensics Engine</h3>
-          <p>Virtually reconstructs shift conditions at the time of any incident to determine fatigue contribution — providing legally defensible root cause analysis for HSE investigations, insurance claims, and employment tribunal proceedings.</p>
+          <p>Virtually reconstructs shift conditions at the time of any incident to determine fatigue contribution providing legally defensible root cause analysis for HSE investigations, insurance claims, and employment tribunal proceedings.</p>
           <div class="status-pills">
             <span class="pill pill-cyan">HSE-Ready</span>
             <span class="pill pill-cyan">RIDDOR Aligned</span>
@@ -1837,14 +1944,14 @@ textarea.form-control{resize:vertical;min-height:96px}
       <div class="section-header">
         <div class="section-eyebrow">How It Works</div>
         <h2>A Complete Safety Intelligence Loop</h2>
-        <p>Fatigue Intelligence Group operates as a closed-loop safety intelligence lifecycle — capturing, scoring, predicting, and continuously evolving your organisation's fatigue risk data so every shift decision is informed by real intelligence, not guesswork.</p>
+        <p>Fatigue Intelligence Group operates as a closed-loop safety intelligence lifecycle capturing, scoring, predicting, and continuously evolving your organisation's fatigue risk data so every shift decision is informed by real intelligence, not guesswork.</p>
       </div>
 
       <div class="phase-grid" style="margin-bottom:48px">
         <div class="phase-card">
           <div class="phase-num">01</div>
           <div class="phase-body">
-            <h4>Assess — Establish Fatigue Baseline</h4>
+            <h4>Assess Establish Fatigue Baseline</h4>
             <p>FIG ingests existing shift patterns, rotas, and incident history to establish a comprehensive fatigue risk baseline. No manual data entry. No disruption to existing systems. Surfaces the hidden cost of unmanaged fatigue.</p>
             <div class="status-pills">
               <span class="pill pill-blue">Auto Data Ingestion</span>
@@ -1855,8 +1962,8 @@ textarea.form-control{resize:vertical;min-height:96px}
         <div class="phase-card">
           <div class="phase-num" style="background:var(--cyan-dim);border-color:var(--cyan-border);color:var(--cyan)">02</div>
           <div class="phase-body">
-            <h4>Monitor — Real-Time Shift Monitoring</h4>
-            <p>The Monitoring Engine constructs a live fatigue risk map of every active shift — from role to individual — highlighting workers approaching dangerous fatigue thresholds in real time, with automated manager alerts.</p>
+            <h4>Monitor Real-Time Shift Monitoring</h4>
+            <p>The Monitoring Engine constructs a live fatigue risk map of every active shift from role to individual highlighting workers approaching dangerous fatigue thresholds in real time, with automated manager alerts.</p>
             <div class="status-pills">
               <span class="pill pill-cyan">Live Risk Dashboard</span>
               <span class="pill pill-cyan">Individual Scoring</span>
@@ -1866,8 +1973,8 @@ textarea.form-control{resize:vertical;min-height:96px}
         <div class="phase-card">
           <div class="phase-num" style="background:var(--success-bg);border-color:var(--success-border);color:var(--success)">03</div>
           <div class="phase-body">
-            <h4>Predict — 72-Hour Advance Warning</h4>
-            <p>The AI Fatigue Risk Engine uses historical patterns, biometric inputs, and shift data to predict dangerous fatigue states 24–72 hours in advance — giving managers time to intervene before risk becomes reality.</p>
+            <h4>Predict 72-Hour Advance Warning</h4>
+            <p>The AI Fatigue Risk Engine uses historical patterns, biometric inputs, and shift data to predict dangerous fatigue states 24–72 hours in advance giving managers time to intervene before risk becomes reality.</p>
             <div class="status-pills">
               <span class="pill pill-green">72hr Prediction</span>
               <span class="pill pill-green">Early Warning System</span>
@@ -1877,8 +1984,8 @@ textarea.form-control{resize:vertical;min-height:96px}
         <div class="phase-card">
           <div class="phase-num" style="background:var(--warning-bg);border-color:var(--warning-border);color:var(--warning)">04</div>
           <div class="phase-body">
-            <h4>Intervene — Deploy Smart Interventions</h4>
-            <p>Fatigue-triggered workflow automation converts a high-risk alert into a structured intervention — automatically recommended rest breaks, shift reassignment suggestions, and manager escalation without manual coordination.</p>
+            <h4>Intervene Deploy Smart Interventions</h4>
+            <p>Fatigue-triggered workflow automation converts a high-risk alert into a structured intervention automatically recommended rest breaks, shift reassignment suggestions, and manager escalation without manual coordination.</p>
             <div class="status-pills">
               <span class="pill pill-warn">Auto Intervention</span>
               <span class="pill pill-warn">Schedule Optimisation</span>
@@ -1888,8 +1995,8 @@ textarea.form-control{resize:vertical;min-height:96px}
         <div class="phase-card">
           <div class="phase-num" style="background:rgba(59,130,246,0.15);border-color:var(--blue-border);color:var(--blue-bright)">05</div>
           <div class="phase-body">
-            <h4>Comply — Automated WTR Compliance</h4>
-            <p>The Compliance Automation Engine watches every active shift for WTR breaches, insufficient rest periods, and excessive consecutive nights — alerting you before a regulatory breach, not after the HSE inspector arrives.</p>
+            <h4>Comply Automated WTR Compliance</h4>
+            <p>The Compliance Automation Engine watches every active shift for WTR breaches, insufficient rest periods, and excessive consecutive nights alerting you before a regulatory breach, not after the HSE inspector arrives.</p>
             <div class="status-pills">
               <span class="pill pill-blue">WTR Live Checking</span>
               <span class="pill pill-blue">HSE-Ready Reports</span>
@@ -1899,8 +2006,8 @@ textarea.form-control{resize:vertical;min-height:96px}
         <div class="phase-card">
           <div class="phase-num" style="background:var(--cyan-dim);border-color:var(--cyan-border);color:var(--cyan)">06</div>
           <div class="phase-body">
-            <h4>Evolve — Continuous Learning Loop</h4>
-            <p>The Outcome-Learning Safety Memory closes the loop — linking every fatigue intervention to incident outcomes and automatically prioritising risk management patterns that deliver the highest safety returns. Your platform gets smarter every shift.</p>
+            <h4>Evolve Continuous Learning Loop</h4>
+            <p>The Outcome-Learning Safety Memory closes the loop linking every fatigue intervention to incident outcomes and automatically prioritising risk management patterns that deliver the highest safety returns. Your platform gets smarter every shift.</p>
             <div class="status-pills">
               <span class="pill pill-cyan">Self-Optimising Models</span>
               <span class="pill pill-cyan">Sector Benchmarking</span>
@@ -1943,7 +2050,7 @@ textarea.form-control{resize:vertical;min-height:96px}
             <div class="ptl-dot"></div>
             <div class="ptl-week">WEEK 6</div>
             <div class="ptl-title">Comply & Evolve</div>
-            <div class="ptl-desc">Full compliance automation goes live. HSE-ready audit reports are generated. The platform begins its continuous learning cycle — getting smarter with every shift.</div>
+            <div class="ptl-desc">Full compliance automation goes live. HSE-ready audit reports are generated. The platform begins its continuous learning cycle getting smarter with every shift.</div>
             <div class="status-pills"><span class="pill pill-blue">WTR Compliance</span><span class="pill pill-blue">Continuous Learning</span></div>
           </div>
         </div>
@@ -1978,7 +2085,7 @@ textarea.form-control{resize:vertical;min-height:96px}
         </div>
         <div class="stat-card">
           <div class="stat-val green">18.2%</div>
-          <div class="stat-desc">CAGR of the UK safety tech market through 2030 — the fastest growing compliance vertical</div>
+          <div class="stat-desc">CAGR of the UK safety tech market through 2030 the fastest growing compliance vertical</div>
           <div class="stat-source">MarketWatch 2024</div>
         </div>
       </div>
@@ -1996,7 +2103,7 @@ textarea.form-control{resize:vertical;min-height:96px}
         </div>
       </div>
       <div class="chart-wrap" style="margin-top:18px">
-        <div class="chart-title">FIG vs Competitors — Capability Score</div>
+        <div class="chart-title">FIG vs Competitors Capability Score</div>
         <div class="chart-sub">Feature coverage comparison across fatigue risk dimensions (0–100)</div>
         <div class="chart-canvas-wrap" style="height:240px"><canvas id="capabilityChart"></canvas></div>
       </div>
@@ -2016,7 +2123,7 @@ textarea.form-control{resize:vertical;min-height:96px}
         <div class="pricing-card">
           <div class="pricing-badge badge-starter">Starter Plan</div>
           <div class="pricing-name">Safety Core</div>
-          <div class="pricing-desc">For SMEs beginning their fatigue risk journey — structured monitoring and WTR compliance without complexity.</div>
+          <div class="pricing-desc">For SMEs beginning their fatigue risk journey structured monitoring and WTR compliance without complexity.</div>
           <div class="pricing-price">£120 <span>/ month</span></div>
           <div class="pricing-period">per organisation · billed monthly</div>
           <div class="pricing-divider"></div>
@@ -2098,8 +2205,8 @@ textarea.form-control{resize:vertical;min-height:96px}
       <div class="mission-block">
         <div class="mission-grid">
           <div class="mission-text">
-            <p>Fatigue Intelligence Group was founded on a clear premise: the UK's safety and workforce management systems are <strong style="color:var(--text-white)">reactive</strong>. Incidents are investigated after they occur. Fatigue is identified after the shift ends. The cost in human lives, regulatory penalties, and lost productivity is enormous — and largely preventable.</p>
-            <p>Our platform transforms fatigue risk management from a paper-based, post-incident practice into a <strong style="color:var(--blue-bright)">governed, real-time intelligence system</strong>. We don't just monitor shift hours — we model the neurological and physiological signature of fatigue at an individual and team level, providing the early warning intelligence that allows managers to intervene before risk becomes reality.</p>
+            <p>Fatigue Intelligence Group was founded on a clear premise: the UK's safety and workforce management systems are <strong style="color:var(--text-white)">reactive</strong>. Incidents are investigated after they occur. Fatigue is identified after the shift ends. The cost in human lives, regulatory penalties, and lost productivity is enormous and largely preventable.</p>
+            <p>Our platform transforms fatigue risk management from a paper-based, post-incident practice into a <strong style="color:var(--blue-bright)">governed, real-time intelligence system</strong>. We don't just monitor shift hours we model the neurological and physiological signature of fatigue at an individual and team level, providing the early warning intelligence that allows managers to intervene before risk becomes reality.</p>
             <p>Built by supply chain, logistics, and safety professionals, FIG encodes operational expertise into a SaaS platform built specifically for the UK's high-risk sectors: <strong style="color:var(--text-white)">logistics, healthcare, manufacturing, construction, and transport.</strong></p>
             <div class="mission-features">
               <div class="mission-feat"><div class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>AI Fatigue Risk Scoring</div>
@@ -2115,7 +2222,7 @@ textarea.form-control{resize:vertical;min-height:96px}
               <div class="founder-avatar">JH</div>
               <div class="founder-name">Mohammad Jia Ul Huq Khan Pattan</div>
               <div class="founder-role">Founder & CEO · Fatigue Intelligence Group</div>
-              <div class="founder-bio">A results-driven operations professional with an MBA in Logistics & Supply Chain Management from the University of the West of Scotland, and hands-on experience leading warehouse and logistics teams at Amazon UK. His experience managing late-shift warehouse teams, achieving 100% OTIF and zero lost-time incidents, directly informs FIG's approach — building the kind of predictive, data-driven fatigue intelligence that operational managers actually need.</div>
+              <div class="founder-bio">A results-driven operations professional with an MBA in Logistics & Supply Chain Management from the University of the West of Scotland, and hands-on experience leading warehouse and logistics teams at Amazon UK. His experience managing late-shift warehouse teams, achieving 100% OTIF and zero lost-time incidents, directly informs FIG's approach building the kind of predictive, data-driven fatigue intelligence that operational managers actually need.</div>
               <div class="founder-tags">
                 <span class="founder-tag">MBA · UWS</span>
                 <span class="founder-tag">Amazon UK</span>
@@ -2137,12 +2244,12 @@ textarea.form-control{resize:vertical;min-height:96px}
         <div class="card" style="text-align:center;padding:22px">
           <div class="card-icon" style="margin:0 auto 12px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
           <h3 style="font-size:.95rem">Logistics & Distribution</h3>
-          <p style="font-size:.78rem">Warehouse, transport, last-mile operations — highest documented fatigue incident rates</p>
+          <p style="font-size:.78rem">Warehouse, transport, last-mile operations highest documented fatigue incident rates</p>
         </div>
         <div class="card" style="text-align:center;padding:22px">
           <div class="card-icon cyan" style="margin:0 auto 12px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z"/></svg></div>
           <h3 style="font-size:.95rem">Healthcare & NHS</h3>
-          <p style="font-size:.78rem">NHS Trusts, care homes, emergency services — critical safety environments</p>
+          <p style="font-size:.78rem">NHS Trusts, care homes, emergency services critical safety environments</p>
         </div>
         <div class="card" style="text-align:center;padding:22px">
           <div class="card-icon warn" style="margin:0 auto 12px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M4 20V10l8-8 8 8v10"/></svg></div>
@@ -2175,28 +2282,28 @@ textarea.form-control{resize:vertical;min-height:96px}
               What is fatigue risk management and why does it matter?
               <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
             </button>
-            <div class="faq-a"><div class="faq-a-inner">Fatigue risk management is the process of identifying, monitoring, and mitigating safety risks posed by worker fatigue in shift-based and high-demand roles. UK employers have a duty of care under the Health and Safety at Work Act 1974 and Working Time Regulations 1998. Fatigue Intelligence Group operationalises that duty — turning it from a paper policy into a live, evidence-based safety system.</div></div>
+            <div class="faq-a"><div class="faq-a-inner">Fatigue risk management is the process of identifying, monitoring, and mitigating safety risks posed by worker fatigue in shift-based and high-demand roles. UK employers have a duty of care under the Health and Safety at Work Act 1974 and Working Time Regulations 1998. Fatigue Intelligence Group operationalises that duty turning it from a paper policy into a live, evidence-based safety system.</div></div>
           </div>
           <div class="faq-item">
             <button class="faq-q" onclick="toggleFaq(this)">
               Which sectors does Fatigue Intelligence Group serve?
               <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
             </button>
-            <div class="faq-a"><div class="faq-a-inner">Logistics & supply chain, healthcare (NHS Trusts, care homes, emergency services), manufacturing, construction, and security services. Phase 1 focuses on logistics and healthcare — the two sectors with the highest documented fatigue-related incident rates in the UK. Phase 2 expands nationally to Manchester, Birmingham, Bristol, and beyond.</div></div>
+            <div class="faq-a"><div class="faq-a-inner">Logistics & supply chain, healthcare (NHS Trusts, care homes, emergency services), manufacturing, construction, and security services. Phase 1 focuses on logistics and healthcare the two sectors with the highest documented fatigue-related incident rates in the UK. Phase 2 expands nationally to Manchester, Birmingham, Bristol, and beyond.</div></div>
           </div>
           <div class="faq-item">
             <button class="faq-q" onclick="toggleFaq(this)">
               How does biometric integration work?
               <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
             </button>
-            <div class="faq-a"><div class="faq-a-inner">FIG integrates with Garmin Health, Fitbit for Enterprise, Whoop, and access control systems via open APIs. Data flows securely into the fatigue risk model under explicit worker consent frameworks. No biometric data is shared with employers without worker consent — the platform outputs a risk score, not raw physiological data.</div></div>
+            <div class="faq-a"><div class="faq-a-inner">FIG integrates with Garmin Health, Fitbit for Enterprise, Whoop, and access control systems via open APIs. Data flows securely into the fatigue risk model under explicit worker consent frameworks. No biometric data is shared with employers without worker consent the platform outputs a risk score, not raw physiological data.</div></div>
           </div>
           <div class="faq-item">
             <button class="faq-q" onclick="toggleFaq(this)">
               How does FIG compare to basic WTR compliance tools?
               <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
             </button>
-            <div class="faq-a"><div class="faq-a-inner">Basic WTR tools check whether shifts meet minimum legal rest requirements — but they cannot predict fatigue risk, integrate biometric data, perform incident forensics, or benchmark against sector peers. FIG unifies risk prediction, real-time monitoring, compliance automation, and forensic investigation into a single closed-loop platform.</div></div>
+            <div class="faq-a"><div class="faq-a-inner">Basic WTR tools check whether shifts meet minimum legal rest requirements but they cannot predict fatigue risk, integrate biometric data, perform incident forensics, or benchmark against sector peers. FIG unifies risk prediction, real-time monitoring, compliance automation, and forensic investigation into a single closed-loop platform.</div></div>
           </div>
         </div>
         <div>
@@ -2220,7 +2327,7 @@ textarea.form-control{resize:vertical;min-height:96px}
               What does an HSE-ready forensic report contain?
               <div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
             </button>
-            <div class="faq-a"><div class="faq-a-inner">Forensic incident reports reconstruct the exact shift conditions — fatigue scores, rest periods, cumulative hours, biometric markers — at the time of any safety incident or near-miss. Reports meet HSE investigation standards, are suitable for RIDDOR submissions, employment tribunal proceedings, and insurance claims. Generated in PDF and structured data formats, exportable on demand.</div></div>
+            <div class="faq-a"><div class="faq-a-inner">Forensic incident reports reconstruct the exact shift conditions fatigue scores, rest periods, cumulative hours, biometric markers at the time of any safety incident or near-miss. Reports meet HSE investigation standards, are suitable for RIDDOR submissions, employment tribunal proceedings, and insurance claims. Generated in PDF and structured data formats, exportable on demand.</div></div>
           </div>
           <div class="faq-item">
             <button class="faq-q" onclick="toggleFaq(this)">
@@ -2241,7 +2348,7 @@ textarea.form-control{resize:vertical;min-height:96px}
       <div class="section-header">
         <div class="section-eyebrow">Contact & Demo</div>
         <h2>Start Your Fatigue Intelligence Journey</h2>
-        <p>Book a live platform demo and discover how predictive fatigue intelligence transforms your safety operations. No sales team — a direct conversation with Jia, the founder.</p>
+        <p>Book a live platform demo and discover how predictive fatigue intelligence transforms your safety operations. No sales team a direct conversation with Jia, the founder.</p>
       </div>
       <div class="contact-grid">
         <div>
@@ -2321,7 +2428,7 @@ textarea.form-control{resize:vertical;min-height:96px}
               <div class="contact-item-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
               </div>
-              <div><div class="contact-item-label">Location</div><div class="contact-item-text">Coventry, United Kingdom<br><span style="font-size:.72rem;color:var(--text-faint)">Peterborough, UK (Registered)</span></div></div>
+              <div><div class="contact-item-label">Location</div><div class="contact-item-text">Coventry, United Kingdom<br><span style="font-size:.72rem;color:var(--text-faint)">Coventry, UK (Registered)</span></div></div>
             </div>
           </div>
           <div class="contact-info-card">
@@ -2362,7 +2469,7 @@ textarea.form-control{resize:vertical;min-height:96px}
             <div class="footer-brand-icon">FIG</div>
             <div class="footer-brand-title"><span>Fatigue</span> Intelligence Group</div>
           </div>
-          <p>The UK's premier AI-driven Fatigue Risk Management & Workforce Safety Intelligence Platform — transforming reactive safety management into predictive, evidence-based workforce intelligence.</p>
+          <p>The UK's premier AI-driven Fatigue Risk Management & Workforce Safety Intelligence Platform transforming reactive safety management into predictive, evidence-based workforce intelligence.</p>
           <div style="font-size:.72rem;color:var(--text-muted);margin-top:10px;font-family:var(--font-mono)">Assess · Monitor · Predict · Protect</div>
           <div class="footer-badges">
             <span class="footer-badge">UK GDPR</span>
@@ -2602,7 +2709,7 @@ textarea.form-control{resize:vertical;min-height:96px}
             <div class="activity-item">
               <div class="activity-dot green"></div>
               <div class="activity-body">
-                <div class="activity-text">NHS Trust Coventry — 72hr shift plan approved. Zero WTR breaches detected.</div>
+                <div class="activity-text">NHS Trust Coventry 72hr shift plan approved. Zero WTR breaches detected.</div>
                 <div class="activity-time">18 min ago · Auto-compliance check</div>
               </div>
             </div>
@@ -2726,10 +2833,10 @@ textarea.form-control{resize:vertical;min-height:96px}
       </div>
 
       <!-- Company Stats Banner -->
-      <div style="background:linear-gradient(135deg,rgba(59,130,246,0.06),rgba(34,211,238,0.04));border:1px solid var(--blue-border);border-radius:var(--r-xl);padding:24px 28px;position:relative;overflow:hidden;margin-bottom:24px">
+      <div class="company-intel-banner" style="background:linear-gradient(135deg,rgba(59,130,246,0.06),rgba(34,211,238,0.04));border:1px solid var(--blue-border);border-radius:var(--r-xl);padding:24px 28px;position:relative;overflow:hidden;margin-bottom:24px">
         <div style="position:absolute;top:-1px;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue-primary),var(--cyan))"></div>
         <div style="font-family:var(--font-mono);font-size:.54rem;letter-spacing:.16em;color:var(--blue-bright);text-transform:uppercase;margin-bottom:16px">Company Intelligence · Fatigue Intelligence Group · Coventry, UK · Est. 2026</div>
-        <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:16px">
+        <div class="company-intel-grid" style="display:grid;gap:16px">
           <div style="text-align:center">
             <div style="font-family:var(--font-head);font-size:1.5rem;font-weight:800;color:var(--blue-bright)">6</div>
             <div style="font-size:.7rem;color:var(--text-muted);font-family:var(--font-mono)">Pilot Clients</div>
@@ -2774,7 +2881,7 @@ textarea.form-control{resize:vertical;min-height:96px}
             <span class="trust-chip cyan">Amazon UK Alumni</span>
           </div>
           <div class="profile-hero-name">Mohammad Jia Ul Huq Khan Pattan</div>
-          <div class="profile-hero-role">Founder & CEO · Fatigue Intelligence Group · Peterborough, UK</div>
+          <div class="profile-hero-role">Founder & CEO · Fatigue Intelligence Group · Coventry, UK</div>
           <div class="profile-hero-sub">Results-driven operations professional with an MBA in Logistics &amp; Supply Chain Management and hands-on experience leading high-performance warehouse teams at Amazon UK. Building FIG to bring predictive, AI-driven fatigue intelligence to UK's most safety-critical workforces.</div>
           <div class="profile-hero-chips">
             <span class="pill pill-blue">Lean Six Sigma</span>
@@ -2788,7 +2895,7 @@ textarea.form-control{resize:vertical;min-height:96px}
         <div class="profile-hero-right">
           <div class="profile-contact-chip">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            mohhamadjiakhan2000@gmail.com
+            fatigueuntelligencegroupuk@outlook.com
           </div>
           <div class="profile-contact-chip">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 14.92z"/></svg>
@@ -2796,11 +2903,11 @@ textarea.form-control{resize:vertical;min-height:96px}
           </div>
           <div class="profile-contact-chip">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Peterborough · Willing to Relocate
+            Coventry · 
           </div>
           <div class="profile-contact-chip" style="color:var(--success);border-color:var(--success-border)">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            Available Immediately
+            
           </div>
         </div>
       </div>
@@ -2809,100 +2916,10 @@ textarea.form-control{resize:vertical;min-height:96px}
     <!-- Profile Body -->
     <div class="profile-body">
       <div class="profile-grid">
-        <!-- LEFT COLUMN: Experience + Education -->
+        <!-- LEFT COLUMN: Education -->
         <div>
-          <div class="profile-section-label">Work Experience</div>
-          <div class="exp-timeline">
-            <!-- Amazon -->
-            <div class="exp-item">
-              <div class="exp-left">
-                <div class="exp-dot">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-                </div>
-                <div class="exp-line"></div>
-              </div>
-              <div class="exp-body">
-                <div class="exp-header">
-                  <div class="exp-role">Warehouse Team Lead</div>
-                  <div class="exp-date">Jun 2024 – Present</div>
-                </div>
-                <div class="exp-company">Amazon EMA4 · UK</div>
-                <ul class="exp-bullets">
-                  <li>Led late-shift warehouse team — achieved <strong style="color:var(--text-white)">100% OTIF</strong> against SLAs and service KPIs</li>
-                  <li>Managed &amp; coached warehouse operatives via 1:1s, appraisals and team meetings</li>
-                  <li>Conducted H&S audits, risk assessments and accident investigations — <strong style="color:var(--success)">zero lost-time incidents</strong></li>
-                  <li>Deputised for Warehouse &amp; Transport Manager during absences</li>
-                  <li>Implemented Lean/Kaizen improvements — <strong style="color:var(--blue-bright)">+15% operational efficiency</strong></li>
-                  <li>Reduced new hire onboarding time by <strong style="color:var(--blue-bright)">30%</strong> via SOP creation &amp; structured training</li>
-                </ul>
-                <div class="exp-tags">
-                  <span class="pill pill-blue">Lean · Kaizen</span>
-                  <span class="pill pill-green">Zero LTI</span>
-                  <span class="pill pill-blue">100% OTIF</span>
-                  <span class="pill pill-cyan">SAP WMS</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- SOHO Sandwich -->
-            <div class="exp-item">
-              <div class="exp-left">
-                <div class="exp-dot cyan-dot">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
-                </div>
-                <div class="exp-line"></div>
-              </div>
-              <div class="exp-body">
-                <div class="exp-header">
-                  <div class="exp-role">Sortation Operative</div>
-                  <div class="exp-date">Jan 2023 – May 2024</div>
-                </div>
-                <div class="exp-company" style="color:var(--cyan)">SOHO Sandwich · London</div>
-                <ul class="exp-bullets">
-                  <li>Managed sortation, labelling &amp; dispatch of 100+ units per shift — <strong style="color:var(--text-white)">98% accuracy</strong></li>
-                  <li>Monitored stock movement via WMS ensuring HACCP &amp; ISO compliance</li>
-                  <li>Supported resource planning and load sequencing during peak periods</li>
-                  <li>Improved on-time delivery by <strong style="color:var(--cyan)">35%</strong> through process improvement &amp; layout optimisation</li>
-                </ul>
-                <div class="exp-tags">
-                  <span class="pill pill-cyan">HACCP</span>
-                  <span class="pill pill-cyan">WMS</span>
-                  <span class="pill pill-green">+35% OTD</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Power Mech -->
-            <div class="exp-item">
-              <div class="exp-left">
-                <div class="exp-dot green-dot">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
-                </div>
-                <div class="exp-line"></div>
-              </div>
-              <div class="exp-body">
-                <div class="exp-header">
-                  <div class="exp-role">QA &amp; QC Supervisor</div>
-                  <div class="exp-date">Mar 2022 – Dec 2022</div>
-                </div>
-                <div class="exp-company" style="color:var(--success)">Power Mech Ltd · India</div>
-                <ul class="exp-bullets">
-                  <li>Implemented QA/QC protocols aligned with IS codes and ISO 9001</li>
-                  <li>Coordinated procurement &amp; logistics for on-time material delivery &amp; quality clearance</li>
-                  <li>Issued &amp; closed Non-Conformance Reports (NCRs) within acceptable lead times</li>
-                  <li>Reduced site rework by <strong style="color:var(--success)">25%</strong> by aligning logistics scheduling with quality checkpoints</li>
-                </ul>
-                <div class="exp-tags">
-                  <span class="pill pill-green">ISO 9001</span>
-                  <span class="pill pill-green">NCR Management</span>
-                  <span class="pill pill-green">-25% Rework</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
           <!-- Education -->
-          <div class="profile-section-label" style="margin-top:28px">Education</div>
+          <div class="profile-section-label">Education</div>
           <div class="edu-card">
             <div class="edu-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
@@ -2925,60 +2942,8 @@ textarea.form-control{resize:vertical;min-height:96px}
           </div>
         </div>
 
-        <!-- RIGHT COLUMN: Skills, Certs, Achievements, Why FIG -->
+        <!-- RIGHT COLUMN: Achievements, Why FIG -->
         <div>
-          <!-- Skills -->
-          <div class="profile-section-label">Core Skills</div>
-          <div class="skills-cloud" style="margin-bottom:24px">
-            <span class="skill-tag">Shift Leadership</span>
-            <span class="skill-tag">KPI Delivery (OTIF)</span>
-            <span class="skill-tag cyan">H&S Compliance</span>
-            <span class="skill-tag">Risk Assessment</span>
-            <span class="skill-tag green">Lean · Kaizen · 5S</span>
-            <span class="skill-tag">Warehouse Management</span>
-            <span class="skill-tag cyan">SOP Development</span>
-            <span class="skill-tag">Inventory Accuracy</span>
-            <span class="skill-tag warn">Budget Control (OpEx)</span>
-            <span class="skill-tag">People Management</span>
-            <span class="skill-tag">Stakeholder Collaboration</span>
-            <span class="skill-tag cyan">SAP MM · WM · SD</span>
-            <span class="skill-tag">WMS · TMS · 3PL</span>
-            <span class="skill-tag warn">HACCP · GMP · COSHH</span>
-            <span class="skill-tag green">FMCG Operations</span>
-            <span class="skill-tag">Packing &amp; Dispatch</span>
-            <span class="skill-tag">MS Excel · Power BI</span>
-            <span class="skill-tag cyan">Incident Investigation</span>
-          </div>
-
-          <!-- Certifications -->
-          <div class="profile-section-label">Certifications</div>
-          <div class="cert-grid" style="margin-bottom:24px">
-            <div class="cert-chip">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/></svg>
-              Lean Six Sigma (Kaizen · 5S)
-            </div>
-            <div class="cert-chip">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/></svg>
-              SAP Supply Chain Logistics
-            </div>
-            <div class="cert-chip">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/></svg>
-              H&S Awareness – Warehouse
-            </div>
-            <div class="cert-chip">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/></svg>
-              Microsoft Certified (Excel · Power BI)
-            </div>
-            <div class="cert-chip">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/></svg>
-              Inventory &amp; Warehouse Mgmt
-            </div>
-            <div class="cert-chip">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/></svg>
-              Continuous Improvement
-            </div>
-          </div>
-
           <!-- Key Achievements -->
           <div class="profile-section-label">Key Achievements</div>
           <div class="ach-list" style="margin-bottom:24px">
@@ -3007,7 +2972,7 @@ textarea.form-control{resize:vertical;min-height:96px}
           <!-- Why I Built FIG -->
           <div class="why-fig-card">
             <div class="profile-section-label" style="margin-bottom:12px;border:none">Why I Built FIG</div>
-            <p style="font-size:.84rem;color:var(--text-secondary);line-height:1.8;margin-bottom:14px">Working late-shift warehouse operations at Amazon, I saw first-hand how fatigue degrades judgement, morale, and safety — yet the tools available were reactive. Incidents were investigated after they happened. Shift patterns were designed without visibility of cumulative fatigue load.</p>
+            <p style="font-size:.84rem;color:var(--text-secondary);line-height:1.8;margin-bottom:14px">Working late-shift warehouse operations at Amazon, I saw first-hand how fatigue degrades judgement, morale, and safety yet the tools available were reactive. Incidents were investigated after they happened. Shift patterns were designed without visibility of cumulative fatigue load.</p>
             <p style="font-size:.84rem;color:var(--text-secondary);line-height:1.8;margin-bottom:16px">My MBA in Logistics &amp; Supply Chain Management gave me the strategic framework. My operational experience gave me the problem. <strong style="color:var(--text-white)">Fatigue Intelligence Group is the platform I wished existed at every site I've ever managed.</strong></p>
             <div style="display:flex;gap:10px;flex-wrap:wrap">
               <button class="btn-primary" onclick="showPage('contact')" style="font-size:.82rem;padding:10px 20px">Book a Demo with Jia →</button>
@@ -3211,12 +3176,12 @@ function initCharts() {
 
 // ══ CHAT ══
 const chatKB = {
-  fig:'Fatigue Intelligence Group is the UK\'s AI-driven Fatigue Risk Management & Workforce Safety Platform. We predict dangerous fatigue states up to 72 hours in advance using shift patterns, biometric data, and incident history — enabling managers to intervene before risk becomes reality.',
+  fig:'Fatigue Intelligence Group is the UK\'s AI-driven Fatigue Risk Management & Workforce Safety Platform. We predict dangerous fatigue states up to 72 hours in advance using shift patterns, biometric data, and incident history enabling managers to intervene before risk becomes reality.',
   how:'FIG operates a 6-phase closed loop: Assess (baseline your fatigue risk), Monitor (live shift scoring), Predict (72hr advance warning), Intervene (automated workflows), Comply (WTR automation), and Evolve (continuous learning). You\'re fully operational in 6 weeks.',
   pricing:'Three plans: Safety Core at £120/month (SMEs, up to 50 workers), Risk Intelligence at £420/month (AI prediction + biometric integration), and Safety Sovereign at £280/site/month (NHS Trusts, multi-site enterprises). Professional add-ons from £600. Pilot partners get free early access.',
-  gdpr:'Yes — FIG is architecturally UK GDPR compliant. Biometric data is processed under explicit worker consent, with full data subject rights built in. All reports are formatted for HSE inspection, employment tribunals, and insurance. We also align with ISO 45003 and ICO health data guidance.',
-  sectors:'FIG serves logistics & distribution, healthcare (NHS Trusts, care homes, emergency services), manufacturing, construction, and security services. Phase 1 focuses on logistics and healthcare — the two sectors with the UK\'s highest documented fatigue incident rates.',
-  biometric:'FIG integrates with Garmin Health, Fitbit Enterprise, Whoop, and access control systems via open APIs under explicit worker consent. The platform outputs a risk score — not raw physiological data — ensuring worker privacy is fully protected.',
+  gdpr:'Yes FIG is architecturally UK GDPR compliant. Biometric data is processed under explicit worker consent, with full data subject rights built in. All reports are formatted for HSE inspection, employment tribunals, and insurance. We also align with ISO 45003 and ICO health data guidance.',
+  sectors:'FIG serves logistics & distribution, healthcare (NHS Trusts, care homes, emergency services), manufacturing, construction, and security services. Phase 1 focuses on logistics and healthcare the two sectors with the UK\'s highest documented fatigue incident rates.',
+  biometric:'FIG integrates with Garmin Health, Fitbit Enterprise, Whoop, and access control systems via open APIs under explicit worker consent. The platform outputs a risk score not raw physiological data ensuring worker privacy is fully protected.',
   hse:'FIG\'s Incident Forensics Engine reconstructs shift conditions at the time of any incident, providing legally defensible root cause analysis for HSE investigations, RIDDOR submissions, and employment tribunals. Reports are auto-generated in PDF and structured data formats.',
 };
 
@@ -3254,9 +3219,9 @@ function toggleChat() { document.getElementById('chatPanel').classList.toggle('o
 // ══ CONTACT ══
 function handleDemoSubmit() {
   const statusEl = document.getElementById('form-status');
-  statusEl.innerHTML = '✓ Thank you — your demo request has been received. Jia will be in touch within 24 hours to arrange a live platform walkthrough.';
+  statusEl.innerHTML = '✓ Thank you your demo request has been received. Jia will be in touch within 24 hours to arrange a live platform walkthrough.';
   statusEl.style.cssText = 'color:var(--success);font-weight:700;padding:10px 14px;background:var(--success-bg);border-radius:8px;border:1px solid var(--success-border);margin-top:10px;font-size:.83rem;font-family:var(--font-body)';
-  showToast('Demo request sent — Jia will be in touch within 24 hours');
+  showToast('Demo request sent Jia will be in touch within 24 hours');
 }
 
 // ══ MOBILE BOTTOM TAB ══
